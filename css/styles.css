@@ -19,7 +19,9 @@ th,
 ul,
 li,
 p {
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   font-size: 16px;
   color: #333;
   line-height: 1.5;
@@ -59,8 +61,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Arial, Helvetica, sans-serif;
   margin-top: 0;
+  font-weight: 700;
 }
 
 article,
@@ -212,7 +214,6 @@ nav h1 a {
 
 #restaurants-list li h1 {
   color: #f18200;
-  font-family: Arial, sans-serif;
   font-weight: 200;
   letter-spacing: 0;
   line-height: 1.3;
