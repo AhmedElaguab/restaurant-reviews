@@ -41,6 +41,10 @@ body {
   position: relative;
 }
 
+.clearBoth {
+  clear: both;
+}
+
 a {
   color: orange;
   text-decoration: none;
@@ -84,6 +88,7 @@ section {
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
+  position: relative;
 }
 
 #footer {
@@ -191,6 +196,9 @@ nav h1 a {
 #restaurants-list {
   background-color: #f3f3f3;
   padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #restaurants-list li {
@@ -304,6 +312,7 @@ nav h1 a {
   border-top: 1px solid #fff;
   padding: 1em;
   width: 100%;
+  overflow: hidden;
 }
 
 #reviews-container {
@@ -346,5 +355,106 @@ nav h1 a {
   color: #666;
 }
 
-/* Responsive Styles
-**************************************/
+/* Responsive Styles for bigger screens
+*******************************************
+**********************************************/
+@media screen and (min-width: 768px) {
+
+  /* ====================== Restaurant Filtering ====================== */
+  .filter-options {
+    flex-direction: row;
+    align-items: center
+  }
+
+  .filter-options h2 {
+    margin: 0;
+  }
+
+  .filter-options select {
+    margin: 0 0 0 1em;
+  }
+
+  /* ====================== Restaurant Listing ====================== */
+
+  #restaurants-list li {
+    width: 49.5%;
+  }
+
+  /* ====================== Restaurant Details ====================== */
+
+  #restaurant-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #restaurant-info {
+    width: 49%;
+  }
+
+  #restaurant-hours {
+    width: 49%;
+    padding-left: 2em;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  /* ====================== Restaurant Listing ====================== */
+
+  #restaurants-list li {
+    width: 32.66666%;
+  }
+
+  /* ====================== Restaurant Details ====================== */
+
+  .inside #map-container {
+    position: fixed;
+    top: 72px;
+    right: 0;
+    left: 50%;
+    bottom: 0;
+    height: 100%;
+    width: 50%;
+  }
+
+  #restaurant-container {
+    width: 50%;
+    flex-direction: column;
+  }
+
+  #restaurant-info {
+    width: 100%;
+  }
+
+  #restaurant-hours {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #reviews-container {
+    width: 50%;
+  }
+
+  .inside #footer {
+    width: 50%;
+  }
+
+  #breadcrumb {
+    width: 50%;
+  }
+
+
+}
+
+@media screen and (min-width: 1440px) {
+
+  /* ====================== Restaurant Listing ====================== */
+
+  #restaurants-list li {
+    width: 24.5%;
+  }
+
+}
