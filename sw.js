@@ -1,10 +1,12 @@
+const cacheName = 'v1';
+
 // Install ServiceWorker
 self.addEventListener('install', (e) => {
 
     e.waitUntil(
         // Open a cache instance
         caches
-        .open('v1')
+        .open(cacheName)
         .then(cache => {
             // Add all assets to the cache instance
             cache.addAll([
@@ -45,6 +47,19 @@ self.addEventListener('install', (e) => {
 self.addEventListener('activate', (e) => {
 
     console.log('[ServiceWorker] Activate Done!!');
+    // Clean old caches
+    e.waitUntil(
+        caches.keys()
+        .then(cacheNames => {
+            return Promise.all(
+                cacheNames.map(mapCacheName => {
+                    if(mapCacheName !== cacheName) {
+                        return caches.delete(mapCacheName);
+                    }
+                })
+            );
+        })
+    )
 
 });
 
